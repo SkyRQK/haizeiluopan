@@ -1,0 +1,41 @@
+.main{
+  font-size:14px; 
+}
+
+.form-box{
+    padding-left: 30rpx;
+}
+.form-box input{
+    height: 90rpx;
+    border-bottom: 1rpx solid #ededed;
+    color: #999;
+}
+.form-box .input-placeholder{
+    color: #aaa;
+}
+.form-box button{
+    margin:30rpx 30rpx 0 0;
+}
+.about{
+    position: relative;
+    padding:17rpx 30rpx;
+    box-sizing: border-box;
+    font-size: 28rpx;
+    color: black;
+}
+.about1{
+   display: flex;
+   flex-direction: row;
+    position: relative;
+    padding:15rpx 30rpx;
+    box-sizing: border-box;
+    font-size: 28rpx;
+    color: black;
+}
+.about_size{
+   display:flex;                   
+  justify-content: center;  
+}
+.about_logo{
+  width: 80%;      
+}

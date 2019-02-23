@@ -1,0 +1,76 @@
+
+<!--pages/shoporder/shoporder.wxml-->
+<view>
+  <view class="order-shop-list">
+      <view style='margin-bottom:24rpx ;background:#fff' >
+      <view  class="orderShopList1">
+         <text decode="{{true}}">&ensp;&ensp;出&ensp;&ensp;行&ensp;&ensp;时&ensp;&ensp;间:&ensp;&ensp;&ensp;&ensp;&ensp;</text>
+         <picker  mode='date'  value="{{date}}" start="2019-01-01" end="2019-06-06" bindchange='datechange' class="picker_group" >
+              <view >{{date}}</view>
+          </picker>
+      </view>
+      <view  class="orderShopList1">
+         <text decode="{{true}}">&ensp;&ensp;目&ensp;&ensp;&ensp;&ensp;的&ensp;&ensp;&ensp;&ensp;地:&ensp;&ensp;&ensp;&ensp;&ensp;</text>
+         <picker  range="{{arrivearray}}" value="{{arriveindex}}" bindchange="arrivepickerchange"  class="picker_group" >
+              <view >{{arrivearray[arriveindex]}}</view>
+          </picker>
+      </view>
+      <view>
+          <button   size="mini" style='left:300rpx;border-radius:44px' bindtap="searchCar"  class='submit' >搜索</button>
+      </view>
+      </view>
+     <view class="divLine"></view>
+     <view class="noCars" wx:if="{{Cars.length == 0}}">
+     <image  src="/images/nosamecars.jpg"></image>
+     <view>
+     <text>
+     好像还没有这个时间段的
+     新建一条吧
+     </text>
+     </view>
+     
+     </view>
+    <!--任务列表-->
+    <view wx:for="{{Cars}}">
+      <view class="orderShopList" >
+        <view class="first-line">
+          <text>{{item.billdate}}</text>
+          <text class="delete-btn" id="{{item.groupid}}" bindtap="onItemClick">加入</text>
+        </view>
+        <view>
+          <text class="text-left">始发地点</text>
+          <text>{{item.beginposition}}</text>
+        </view>
+        <view>
+          <text class="text-left">目的地</text>
+          <text>{{item.arriveposition}}</text>
+        </view>
+        <view>
+          <text class="text-left">队长</text>
+          <text>{{item.captain}}</text>
+          <text class="text-money" wx:if="{{item.seats <= 0 }}"> 无座</text>
+          <text class="text-money-exit" wx:if="{{item.seats > 0 }}"> 剩余座位 ：{{item.seats}}</text>
+        </view>
+        <view>
+          <text class="text-left">具体时间</text>
+          <text>{{item.cleartime}}</text>
+        </view>
+        <view>
+          <text class="text-left">队员要求</text>
+          <text>{{item.palyerrequir}}</text>
+        </view>
+        <view>
+          <text class="text-left">行程介绍</text>
+          <text>{{item.carintroduce}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="bottom-pay">
+    <view>
+      <button class="btn-area-button submit" bindtap="goToinsertcar" >创建行程</button>
+    </view>
+    <view>
+    </view>
+  </view>
+</view>

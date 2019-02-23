@@ -1,0 +1,46 @@
+<view class="main">
+
+    <view class="form-box">
+        <form bindsubmit="formSubmit">
+            <input maxlength='15' value="{{haspersonalinfo.name}}" name="name" placeholder="姓名"/>
+            <input maxlength='11' type="number" name="phone" value="{{haspersonalinfo.phone}}" placeholder="电话号码"/>
+            <input maxlength='13' name="learnid" value="{{haspersonalinfo.learnid}}" placeholder="学号"/>
+           <input  maxlength='17' name="qq" value="{{haspersonalinfo.qq}}" placeholder="QQ"/>
+            <button form-type="submit">保存</button>
+        </form>
+    </view>
+     
+    <view class='about'>该小程序是由在校学生运营，海贼科技提供技术支持，出于为方便学生回家，寻找同车厢的小伙伴的目的开发的，如果有恶意骚扰其他用户的行为，我们将追究其责任。
+    </view>
+
+    <view class='about1'>如有任何问题 请联系 QQ：1137554811</view>
+      <view
+      flex-direction='row' 
+      class='about1'>
+      <view
+      class='about1'>
+      <image
+      style="width:100rpx;
+      mode="widthFix"
+      src='{{imageLove}}'>
+      </image>
+       </view>
+       <view
+        class='about_logo'>
+      <text >
+          白白 预祝大家
+          新年快乐，
+          逢考必过 
+          想要的都拥有
+          未曾得到的都释怀
+          2019冲鸭
+                -- 来自表白墙的祝愿
+      </text>
+      </view>
+      </view>
+      <view class='about1'></view>
+      <view class='about1'></view>
+      <view class='about1'></view>
+      <view class='about_size'>
+      </view>
+</view>

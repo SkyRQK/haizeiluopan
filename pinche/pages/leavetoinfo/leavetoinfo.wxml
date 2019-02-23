@@ -1,0 +1,29 @@
+<!--pages/order/order.wxml-->
+<view class="order-wrap">
+  <view>
+    <form bindsubmit="formSubmit">
+      <view class="order-block">
+
+        <text class="block-title">车次信息创建</text>
+      <view class="picker_group">
+        <text decode="{{true}}">出&ensp;&ensp;发&ensp;&ensp;日&ensp;&ensp;期:&ensp;&ensp;&ensp;&ensp;</text>
+        <picker mode='date' value="{{date}}" start="2019-01-01" end="2019-06-06" bindchange='datechange'>
+          <view>{{date}}</view>
+        </picker>
+      </view>
+        <view class="info-list">
+          <text>车次:</text>
+          <input type="text" placeholder="具体车次需要大小写" name="carnum" />
+        </view>
+        <view class="info-list">
+          <text>暗号:</text>
+          <input type="text" placeholder="可以当成简单备注啦！" name="remarks" />
+        </view>
+      </view>
+      <view class="order-button">
+        <button  size="default" form-type="submit" class='submit' disabled="{{buttonClicked}}"> 创建行程 </button>
+      </view>
+    </form>
+  </view>
+
+</view>

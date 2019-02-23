@@ -1,0 +1,30 @@
+<image src='/images/s4.png' style='width:100%;height:400rpx'></image>
+<view class="address-box">
+  <view class="address-manage">
+    <navigator url="/pages/leavetoinfo/leavetoinfo">设置个人的车程</navigator>
+  </view>
+  <view wx:if="{{!ifhavepersonalcarinfo}}" class="address-list">
+    <text decode="{{true}}" style='display:block'>日期:&ensp;&ensp; {{thispagepersonalcarinfo.starttime}}</text>
+    <text decode="{{true}}" style='display:block'>车次:&ensp;&ensp;{{thispagepersonalcarinfo.carnum}}</text>
+    <text decode="{{true}}" style='display:block'>备注:&ensp;&ensp;{{thispagepersonalcarinfo.remarks}}</text>
+
+  </view>
+</view>
+<view wx:if="{{ifhavepersonalcarinfo==true}}" class="orders-detail">
+  <image src="/images/samecar.jpg"></image>
+  <view class="">还没有和你同车厢的人，还需要再等等</view>
+</view>
+<view wx:elif="{{ifhavepersonalcarinfo==false}}">
+    <view class="orders-box">
+        <view class="orders">同行的人</view>
+        <view class="orders-list" wx:for="{{carriageResults}}" wx:key="index">
+            <view class="orders-number">行程暗号：{{item.remarks}}</view>
+            <view class="orders-detail">
+                <image src="/images/head.jpg"></image>
+                <view class="">队长:{{item.trueName}}</view>
+                <view class="">日期:{{item.starttime}}</view>
+                <view class="">QQ:{{item.qq}}</view>
+            </view>
+        </view>
+    </view>
+</view>     

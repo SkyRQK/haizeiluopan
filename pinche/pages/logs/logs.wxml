@@ -1,0 +1,34 @@
+<view class="main">
+    <view class="header">
+        <image src="{{thumb}}" class="thumb"></image>
+        <text class="nickname">{{nickname}}</text>
+        <text class="about" bindtap='aboutus'>关于我们</text>
+    </view>
+    <view class="address-box">
+        <view class="address-manage">
+            <navigator url="/pages/setpersoninfo/setpersoninfo">个人信息管理</navigator>
+        </view>
+        <view wx:if="{{ifhaspersonalinfo}}" class="address-list">
+            <view>姓名:{{haspersonalinfo.name}}</view>
+            <view>电话:{{haspersonalinfo.phone}}</view>
+            <view>学号:{{haspersonalinfo.learnid}}</view>
+            <view>QQ:{{haspersonalinfo.qq}}</view>
+        </view>
+    </view>
+    <view class="orders-box">
+        <view class="orders">我的拼车信息</view>
+        <view class="orders-list" wx:for="{{mainCarsList}}" wx:key="index">
+            <view class="orders-number">行程编号：{{item.groupid}}</view>
+            <view class="orders-detail">
+                <image src="/images/head.jpg"></image>
+                <view class="">队长:{{item.captain}}</view>
+                <view class="">日期:{{item.billdate}}</view>
+                <text class="orders-status">{{item.carintroduce}}</text>
+            </view>
+            <view class="orders-footer">
+                <text>剩余座位：{{item.seats}}</text>
+                <button size="mini"   id="{{item.groupid}}" class="orders-btn" bindtap="lookcardetail">查看</button>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,49 @@
+<view class="main">
+<image src='/images/b1.jpg' style='width:100%;height:400rpx'></image>
+  <!-- <swiper indicator-dots="true" autoplay="true" interval="{{interval}}" duration="{{duration}}" circular="true">
+    <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" width="100%" />
+      </swiper-item>
+    </block>
+  </swiper> -->
+  <!-- <view class="search">
+        <navigator url="search/search">
+            <view class="search-text">
+                <icon class="weui-icon-search_in-box search-icon" type="search" size="14"></icon>
+                搜 索
+            </view>
+        </navigator>
+    </view> -->
+  <view class="selected">
+    <view class="select-title">
+    <view wx:if="{{days > 0}}">
+       <view class='dayInfo'>距离回家车次 <text class='dayinfo-carnum'>{{carNum}}</text></view>
+      <view class='dayInfo'>还有 {{days}} 天</view>
+    </view>
+    <view  wx:if="{{days == 0}}">
+     <text class='dayInfo'>回家啦！！！</text>
+    </view>
+    <view  wx:if="{{days < 0}}">
+     <text class='dayInfo'>还没发布行程</text>
+    </view>
+    </view>
+    <view class="select-top">
+      <view class="select-top-small">
+        <navigator url="/pages/leavetogether/leavetogether">
+        <image src="/images/s1.png"></image>
+        </navigator>
+      </view>
+      <view class="select-top-small">
+        <navigator url="/pages/index/index">
+          <image src="/images/s2.png"></image>
+        </navigator>
+      </view>
+    </view>
+    <view class="select-bottom">
+      <navigator url="">
+        <image src="/images/s3.png"></image>
+      </navigator>
+    </view>
+  </view>
+</view>

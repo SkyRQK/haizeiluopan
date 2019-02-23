@@ -1,0 +1,37 @@
+server:
+  tomcat:
+    accesslog:
+      buffered: true
+      directory: /log11/tomacat_log
+      enabled: true
+      file-date-format: .yyyy-MM-dd
+      pattern: common
+      prefix:  access_log
+      rename-on-rotate: false
+      request-attributes-enabled: false
+      rotate: true
+      suffix: .log
+  port: 443
+  servlet:
+    context-path: /
+  ssl:
+      key-store: classpath:1678935_wechat.haizeix.com.pfx
+      key-store-password: KEf7n7I1
+      key-store-type: PKCS12
+spring:
+  mvc:
+    static-path-pattern: /**
+  datasource:
+    url: jdbc:mysql://47.93.11.51:3306/pinche?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: haizeirqk
+    password: 123456
+    tomcat:
+      test-while-idle: true
+      test-on-borrow: true
+      validation-query: SELECT 1
+      time-between-eviction-runs-millis: 300000
+      min-evictable-idle-time-millis: 1800000
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true

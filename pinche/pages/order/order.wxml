@@ -1,0 +1,108 @@
+
+<!--pages/order/order.wxml-->
+<view class="order-wrap">
+  <view>
+      <form bindsubmit="formSubmit">
+    <!--收货人信息-->
+    <view class="order-block">
+
+      <text class="block-title">队长创建信息</text>
+      <!-- <view class="info-list">
+        <text>初始地址</text>
+        <input type="text" placeholder="地址" />
+      </view>
+      <view class="info-list">
+        <text>目的地</text>
+        <input type="text" placeholder="地址" />
+      </view> -->
+      <view class="info-list">
+        <text>姓名</text>
+        <input type="text" placeholder="请输入姓名"   name="captainchange"/>
+      </view>
+      <view class="info-list">
+        <text>电话</text>
+        <input type="text" placeholder="请输入电话" name="phonechange" />
+      </view>
+      <view class="info-list">
+        <text>队员要求</text>
+        <input type="text" placeholder="写着让大家开心的" name="palyerrequirchange"/>
+      </view>
+      <view class="info-list">
+        <text>行程介绍</text>
+        <input type="text" placeholder="例：我想回家过年...55"
+        name="carintroducechange" />
+      </view>
+    </view>
+        <view class="picker_group" decode="{{true}}">
+    <text decode="{{true}}">剩&ensp;&ensp;余&ensp;&ensp;座&ensp;&ensp;位：&ensp;&ensp;&ensp;</text>
+    <picker  range="{{Seats}}" value="{{seatsindex}}" bindchange="seatschange"  >
+      <view >{{Seats[seatsindex]}}</view>
+    </picker>
+    </view >
+    <view class="picker_group" decode="{{true}}">
+    <text decode="{{true}}">出&ensp;&ensp;发&ensp;&ensp;地&ensp;&ensp;址:&ensp;&ensp;&ensp;&ensp;</text>
+    <picker  range="{{beginarray}}" value="{{beginindex}}" bindchange="beginpickerchange"  >
+      <view >{{beginarray[beginindex]}}</view>
+    </picker>
+    </view >
+    <view class="picker_group" decode="{{true}}">
+      <text decode="{{true}}">目&ensp;&ensp;的&ensp;&ensp;地:&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</text>
+     <picker  range="{{arrivearray}}" value="{{arriveindex}}" bindchange="arrivepickerchange"  >
+       <view >{{arrivearray[arriveindex]}}</view>
+     </picker>
+    </view >
+    <view class="picker_group">
+      <text decode="{{true}}">出&ensp;&ensp;发&ensp;&ensp;时&ensp;&ensp;间:&ensp;&ensp;&ensp;&ensp;</text>
+      <picker   mode='time'  value="{{value}}" start="00.00" end="23.59" bindchange='timechange'>
+        <view>{{value}}</view>
+      </picker>
+    </view >
+      <view class="picker_group">
+      <text decode="{{true}}">出&ensp;&ensp;发&ensp;&ensp;日&ensp;&ensp;期:&ensp;&ensp;&ensp;&ensp;</text>
+      <picker   mode='date'  value="{{date}}" start="2019-01-01" end="2019-06-06" bindchange='datechange'>
+        <view>{{date}}</view>
+      </picker>
+    </view >
+    <!-- 订购人信息
+    <view class="order-block">
+      <text class="block-title">订购人信息</text>
+      <view class="info-list">
+        <text>姓名</text>
+        <input type="text" placeholder="请输入姓名" />
+      </view>
+      <view class="info-list">
+        <text>手机</text>
+        <input type="text" placeholder="请输入手机" />
+      </view>
+      <view class="info-list">
+        <text>邮箱</text>
+        <input type="text" placeholder="请输入邮箱" />
+      </view>
+      <view class="choose-option">
+        <text>支付方式</text>
+        <radio-group>
+          <label wx:for="{{payWay}}" wx:for-item="pay" bindtap="selectPay" data-payway="{{pay.name}}">
+            <icon wx:if="{{pay.checked}}" type="success" size="20" color="#E64340" />
+            <icon wx:else type="circle" size="20" />
+            <text>{{pay.value}}</text>
+          </label>
+        </radio-group>
+      </view>
+      <view class="choose-option">
+        <text>配送方式</text>
+        <radio-group>
+          <label wx:for="{{sendwayData}}" wx:for-item="sendway" bindtap="selectSendway" data-sendway="{{sendway.name}}">
+            <icon wx:if="{{sendway.checked}}" type="success" size="20" color="#E64340" />
+            <icon wx:else type="circle" size="20" />
+            <text>{{sendway.value}}</text>
+          </label>
+        </radio-group>
+      </view>
+    </view> -->
+    <view class="order-button">
+      <button class='submit' size="default" form-type="submit"   disabled="{{buttonClicked}}"> 确认创建 </button>
+    </view>
+    </form>
+  </view>
+
+</view>

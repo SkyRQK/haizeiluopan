@@ -1,0 +1,22 @@
+<view >
+  <view wx:for="{{carperson}}" class="orderShopList">
+    <view>
+      <view>
+        <text class="text-left">姓名</text>
+        <text>{{item.name}}</text>
+      </view>
+      <view>
+        <text class="text-left">电话</text>
+        <text>{{item.phone}}</text>
+      </view>
+      <view>
+        <text class="text-left">学号</text>
+        <text>{{item.learnid}}</text>
+      </view>
+      <view>
+        <text class="text-left">QQ</text>
+        <text>{{item.qq}}</text>
+      </view>
+    </view>
+  </view>
+</view>
