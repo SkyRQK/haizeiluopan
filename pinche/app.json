@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/querycet/querycet",
     "pages/start/start",
     "pages/logs/logs",
     "pages/homepage/homepage",

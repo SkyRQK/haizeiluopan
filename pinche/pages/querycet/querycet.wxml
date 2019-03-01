@@ -1,0 +1,29 @@
+<!--pages/querycet/querycet.wxml-->
+<view class="page-querycet" xmlns:wx="http://www.w3.org/1999/xhtml">
+  <view style='border:solid 10px;border-color:#cccccc;margin:0px 0px 30px 14px;padding:10px;text-align: center;'>四六级准考证查询</view>
+  <!-- <view class="weui-cells weui-cells_after-title"> -->
+  <view class="weui-cell weui-cell_input weui-cell_vcode">
+    <view class="weui-cell__hd">
+      <view class="weui-label">学号</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input id='sid_input' bindinput="sidInput" class="weui-input  text" placeholder="输入学号吧" />
+    </view>
+    <!-- <view class="weui-cell__ft">
+      <view class="weui-vcode-btn" bindtap='getEnum'>查询</view>
+    </view> -->
+  </view>
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">准考证号</view>
+    </view>
+    <view class="weui-cell__bd">
+      <view class="weui-input">{{eNum}}</view>
+    </view>
+  </view>
+  <view class="weui-cell weui-cell_input"></view>
+  <!-- </view> -->
+  <button class="weui-btn test" type="default">查询</button>
+  <view class="weui-cells__tips">该数据来自教务处.. </view>
+  <image class='image-class' src='/images/querycet/pengwu.jpg' mode='widthFix'></image>
+</view>
